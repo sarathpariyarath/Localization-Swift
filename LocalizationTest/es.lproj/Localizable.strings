@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  LocalizationTest
+
+  Created by Sarath P on 06/05/22.
+  
+*/
+
+"button-title" = "Hola esto es español";

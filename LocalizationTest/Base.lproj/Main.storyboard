@@ -17,49 +17,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFS-Oi-ODq">
-                                <rect key="frame" x="20" y="436.5" width="374" height="23"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <rect key="frame" x="20" y="433" width="374" height="30"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciS-1C-iv7">
-                                <rect key="frame" x="20" y="477" width="374" height="31"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7z4-dH-PtF">
+                                <rect key="frame" x="30" y="483" width="354" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="9KX-le-k8x"/>
+                                    <constraint firstAttribute="height" constant="30" id="MK1-kX-xVX"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Spanish"/>
+                                <segments>
+                                    <segment title="English"/>
+                                    <segment title="Spanish"/>
+                                </segments>
                                 <connections>
-                                    <action selector="spaSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9OO-SD-9F1"/>
+                                    <action selector="languageSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="c3n-AU-zqx"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPg-Pe-wVY">
-                                <rect key="frame" x="20" y="516" width="374" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="kpr-Xh-Sw3"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="English"/>
-                                <connections>
-                                    <action selector="engSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x5L-2S-1Hl"/>
-                                </connections>
-                            </button>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ciS-1C-iv7" firstAttribute="top" secondItem="oFS-Oi-ODq" secondAttribute="bottom" constant="17.5" id="Kw0-TJ-RSr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yPg-Pe-wVY" secondAttribute="trailing" constant="20" id="M9P-yA-sVI"/>
-                            <constraint firstItem="yPg-Pe-wVY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Pfh-3O-gFE"/>
-                            <constraint firstItem="ciS-1C-iv7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="V7b-yV-MX0"/>
+                            <constraint firstItem="7z4-dH-PtF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="1IJ-d2-WLO"/>
+                            <constraint firstItem="7z4-dH-PtF" firstAttribute="top" secondItem="oFS-Oi-ODq" secondAttribute="bottom" constant="20" id="3Oa-ai-hcq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7z4-dH-PtF" secondAttribute="trailing" constant="30" id="Dhf-7N-kDE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oFS-Oi-ODq" secondAttribute="trailing" constant="20" id="XSG-wq-O7C"/>
                             <constraint firstItem="oFS-Oi-ODq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ew9-4s-GkU"/>
                             <constraint firstItem="oFS-Oi-ODq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g9Z-tN-J2f"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ciS-1C-iv7" secondAttribute="trailing" constant="20" id="nz3-KF-G31"/>
-                            <constraint firstItem="yPg-Pe-wVY" firstAttribute="top" secondItem="ciS-1C-iv7" secondAttribute="bottom" constant="8" symbolic="YES" id="qHg-yx-kqq"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="languageSegment" destination="7z4-dH-PtF" id="BKO-XB-tGH"/>
                         <outlet property="sampleLabel" destination="oFS-Oi-ODq" id="Rv2-gF-WAr"/>
                     </connections>
                 </viewController>

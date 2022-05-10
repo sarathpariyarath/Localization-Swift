@@ -9,19 +9,21 @@ import UIKit
 let buttonText = NSLocalizedString("button-title", comment: "")
 class ViewController: UIViewController {
 
+    @IBOutlet weak var languageSegment: UISegmentedControl!
     @IBOutlet weak var sampleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         sampleLabel.text = buttonText
     }
 
-
-    @IBAction func engSelected(_ sender: Any) {
-        sampleLabel.text = "button-title".localizableString("en")
+    @IBAction func languageSegment(_ sender: Any) {
+        if languageSegment.selectedSegmentIndex == 0 {
+            sampleLabel.text = "button-title".localizableString("en")
+        } else {
+            sampleLabel.text = "button-title".localizableString("es")
+        }
     }
-    @IBAction func spaSelected(_ sender: Any) {
-        sampleLabel.text = "button-title".localizableString("es")
-    }
+    
 }
 
 extension String {
